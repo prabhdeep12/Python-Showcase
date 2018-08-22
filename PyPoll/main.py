@@ -58,3 +58,26 @@ with open(csvpath) as rawdata:
         f"Winner: {winner}\n"
         f"-------------------------\n")
     print(election_results_part2)
+
+    # Specify the file to write to
+output_path = os.path.join("PyPollAnswers.csv")
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path, 'w', newline='') as csvfile:
+
+   # Initialize csv.writer
+   csvwriter = csv.writer(csvfile, delimiter=',')
+
+  
+
+   # Write the second row
+   csvwriter.writerow(['Election Results'])
+   csvwriter.writerow(['-------------------------'])
+   csvwriter.writerow(['Total Votes : '+str(total_votes)])
+   csvwriter.writerow(['-------------------------'])
+   csvwriter.writerow(['Khan : '+str(percenatge_count)])
+   csvwriter.writerow(['Li : '+str(percenatge_count)])
+   csvwriter.writerow(['O Tooley : '+str(percenatge_count)])
+   csvwriter.writerow(['-------------------------'])
+   csvwriter.writerow(['Winner : Khan'])
+   csvwriter.writerow(['-------------------------'])
